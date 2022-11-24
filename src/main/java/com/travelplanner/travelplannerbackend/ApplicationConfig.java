@@ -24,7 +24,7 @@ public class ApplicationConfig {
 
         @Bean(name="dataSource")
         public DataSource dataSource(){
-            String RDS_INSTANCE="travelplanner-instance";
+            String RDS_INSTANCE="travelplanner-instance.cosws9mmtdnt.us-east-2.rds.amazonaws.com";
             String USERNAME = "admin";
             String PASSWORD = "q1234567";
             DriverManagerDataSource dataSource=new DriverManagerDataSource();
