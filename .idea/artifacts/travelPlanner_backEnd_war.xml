@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="travelPlanner-backEnd:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>travelPlanner-backEnd</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="travelPlanner-backEnd-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="travelPlanner-backEnd:war exploded" />
+    </root>
+  </artifact>
+</component>
