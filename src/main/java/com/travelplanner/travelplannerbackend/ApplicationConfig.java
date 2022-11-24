@@ -24,9 +24,9 @@ public class ApplicationConfig {
 
         @Bean(name="dataSource")
         public DataSource dataSource(){
-            String RDS_INSTANCE="";
-            String USERNAME = "";
-            String PASSWORD = "";
+            String RDS_INSTANCE="travelplanner-instance";
+            String USERNAME = "admin";
+            String PASSWORD = "q1234567";
             DriverManagerDataSource dataSource=new DriverManagerDataSource();
             dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
             dataSource.setUrl("jdbc:mysql://" + RDS_INSTANCE + ":3306/travelPlanner_backEnd?createDatabaseIfNotExist=true&serverTimezone=UTC");
