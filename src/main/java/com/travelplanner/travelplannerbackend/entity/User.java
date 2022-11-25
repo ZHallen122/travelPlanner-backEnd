@@ -1,12 +1,15 @@
 package com.travelplanner.travelplannerbackend.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
 @Table(name="User")
-public class User {
+public class User implements Serializable{
+
+    //not sure
+    private static final long serialVersionUID = 2652327633296064143L;
+
     @Id
 
     // things in table
@@ -16,6 +19,9 @@ public class User {
     private String password;
 
     // remember to add relation
+   // @OneToOne(cascade = CascadeType.ALL)
+  //  @JoinColumn(unique=true)
+  //  private Cart cart;
 
     //Apis get and set
     public String getEmail() {
@@ -50,5 +56,12 @@ public class User {
         this.password = password;
     }
 
+   // public Cart getCart(){
+ //       return cart;
+ //   }
+
+   // public void setCart(Cart cart){
+        //this.cart=cart;
+  //  }
 
 }
