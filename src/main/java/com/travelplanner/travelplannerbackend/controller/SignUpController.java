@@ -20,7 +20,7 @@ public class SignUpController {
         this.userService=userService;
     }
 
-    @RequestMapping(value="/signUp", method= RequestMethod.POST)
+    @RequestMapping(value="/signup", method= RequestMethod.POST)
     @ResponseStatus(value= HttpStatus.CREATED)
     public void signUp(@RequestBody User user){
         userService.signUp(user);
