@@ -15,6 +15,9 @@ public class PointOfInterest {
     private String longitude;
     private String latitude;
 
+    //To make more advance we need to store pictrue url
+    private String picture_URL;
+
     //wait for add relation
 
     //Apis get and set
@@ -29,4 +32,7 @@ public class PointOfInterest {
 
     public String getLatitude(){return this.latitude;}
     public void setLatitude(String latitude){this.latitude=latitude;}
+
+    public String getPicture_URL(){return this.picture_URL;}
+    public void setPicture_URL(String picture_URL){this.picture_URL=picture_URL;}
 }
