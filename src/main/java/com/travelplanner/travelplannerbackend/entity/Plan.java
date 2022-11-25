@@ -8,7 +8,7 @@ import javax.persistence.*;
 @Table(name="Plam")
 public class Plan {
     @Id
-    private String planId;
+    private int planId;
     private String plan_title;
     private int total_day;
 
@@ -19,11 +19,11 @@ public class Plan {
     @JsonIgnore
     private Cart cart;
 
-    public String getPlanId() {
+    public int getPlanId() {
         return planId;
     }
 
-    public void setPlanId(String planId) {
+    public void setPlanId(int planId) {
         this.planId = planId;
     }
 
