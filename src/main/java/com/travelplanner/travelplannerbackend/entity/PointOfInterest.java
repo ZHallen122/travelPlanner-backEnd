@@ -2,6 +2,7 @@ package com.travelplanner.travelplannerbackend.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -19,6 +20,10 @@ public class PointOfInterest {
     private String picture_URL;
 
     //wait for add relation
+    @ManyToOne
+    private SmallerPlan smallerPlan;
+    @ManyToOne
+    private City city;
 
     //Apis get and set
     public String getPoint_name(){return this.point_name;}
@@ -35,4 +40,20 @@ public class PointOfInterest {
 
     public String getPicture_URL(){return this.picture_URL;}
     public void setPicture_URL(String picture_URL){this.picture_URL=picture_URL;}
+
+    public SmallerPlan getSmallerPlan() {
+        return smallerPlan;
+    }
+
+    public void setSmallerPlan(SmallerPlan smallerPlan) {
+        this.smallerPlan = smallerPlan;
+    }
+
+    public City getCity() {
+        return city;
+    }
+
+    public void setCity(City city) {
+        this.city = city;
+    }
 }

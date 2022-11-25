@@ -19,9 +19,9 @@ public class User implements Serializable{
     private String password;
 
     // remember to add relation
-   // @OneToOne(cascade = CascadeType.ALL)
-  //  @JoinColumn(unique=true)
-  //  private Cart cart;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(unique=true)
+    private Cart cart;
 
     //Apis get and set
     public String getEmail() {
@@ -56,12 +56,12 @@ public class User implements Serializable{
         this.password = password;
     }
 
-   // public Cart getCart(){
- //       return cart;
- //   }
+    public Cart getCart(){
+       return cart;
+    }
 
-   // public void setCart(Cart cart){
-        //this.cart=cart;
-  //  }
+    public void setCart(Cart cart){
+        this.cart=cart;
+    }
 
 }
