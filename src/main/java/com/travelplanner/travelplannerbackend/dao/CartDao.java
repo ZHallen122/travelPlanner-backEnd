@@ -24,6 +24,7 @@ public class CartDao {
             session.beginTransaction();
             session.delete(plan);
             session.getTransaction().commit();
+
         }catch (Exception ex){
             ex.printStackTrace();
             if (session != null) {
