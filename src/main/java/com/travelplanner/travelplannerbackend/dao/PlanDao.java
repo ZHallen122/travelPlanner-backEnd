@@ -14,7 +14,7 @@ public class PlanDao {
     @Autowired
     SessionFactory sessionFactory;
     public void save(Plan plan) {
-            Session session = null;
+        Session session = null;
         try {
             session = sessionFactory.openSession();
             session.beginTransaction();
