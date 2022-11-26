@@ -3,6 +3,7 @@ package com.travelplanner.travelplannerbackend.entity;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name="Plam")
@@ -12,8 +13,8 @@ public class Plan {
     private String plan_title;
     private int total_day;
 
-    @ManyToOne
-    private SmallerPlan smallerPlan;
+    @OneToMany
+    private List<SmallerPlan> listOfSmallerPlan;
 
     @ManyToOne
     @JsonIgnore
@@ -43,12 +44,12 @@ public class Plan {
         this.total_day = total_day;
     }
 
-    public SmallerPlan getSmallerPlan() {
-        return smallerPlan;
+    public List<SmallerPlan> getListOfSmallerPlan() {
+        return listOfSmallerPlan;
     }
 
-    public void setSmallerPlan(SmallerPlan smallerPlan) {
-        this.smallerPlan = smallerPlan;
+    public void setListOfSmallerPlan(List<SmallerPlan> listOfSmallerPlan) {
+        this.listOfSmallerPlan = listOfSmallerPlan;
     }
 
     public Cart getCart() {
