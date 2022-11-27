@@ -1,16 +1,25 @@
 package com.travelplanner.travelplannerbackend.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.Set;
 
 @Entity
+
 public class Cart {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
-    //private List<Plan> planOfList;
+
+    @OneToMany(mappedBy = "cart", cascade = CascadeType.ALL)
+    private Plan plan;
+
+    public Plan getPlan() {
+        return plan;
+    }
+
+    public void setPlan(Plan plan) {
+        this.plan = plan;
+    }
 
     public int getId() {
         return id;

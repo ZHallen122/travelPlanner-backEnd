@@ -1,22 +1,28 @@
 package com.travelplanner.travelplannerbackend.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+
+
+import javax.persistence.*;
+import java.util.Set;
+
 
 @Entity
 @Table(name="Point_Of_Interest")
 public class PointOfInterest {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private int id;
     // things inside table
     private String point_name;
     private String description;
     private String longitude;
     private String latitude;
 
-    //wait for add relation
+    @ManyToMany
+    Set<Plan> planList;
 
+    //wait for add relation
     //Apis get and set
     public String getPoint_name(){return this.point_name;}
     public void setPoint_name(String point_name){this.point_name=point_name;}

@@ -1,8 +1,6 @@
 package com.travelplanner.travelplannerbackend.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name="User")
@@ -15,7 +13,18 @@ public class User {
     private String lastName;
     private String password;
 
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(unique = true)
+    private Cart cart;
     // remember to add relation
+
+    public Cart getCart() {
+        return cart;
+    }
+
+    public void setCart(Cart cart) {
+        this.cart = cart;
+    }
 
     //Apis get and set
     public String getEmail() {
