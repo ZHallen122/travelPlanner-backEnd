@@ -15,9 +15,10 @@ import java.util.Properties;
 public class ApplicationConfig {
         @Bean(name = "sessionFactory")
         public LocalSessionFactoryBean  sessionFactory(){
+            String PACKAGE_NAME = "com.travelplanner.travelplannerbackend.entity";
             LocalSessionFactoryBean sessionFactory=new LocalSessionFactoryBean();
             sessionFactory.setDataSource(dataSource());
-            sessionFactory.setPackagesToScan("com.travelplanner.travelplannerbackend.entity");
+            sessionFactory.setPackagesToScan(PACKAGE_NAME);
             sessionFactory.setHibernateProperties(hibernateProperties());
             return sessionFactory;
         }
