@@ -1,13 +1,12 @@
 package com.travelplanner.travelplannerbackend;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
-
+import org.springframework.context.annotation.Bean;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-
+import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 
 //import io.jsonwebtoken.security.Keys;
 import javax.sql.DataSource;
@@ -24,6 +23,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .csrf().disable()
                 .formLogin()
                 .failureForwardUrl("/login?error=true");
+
+
     }
 
     @Override
@@ -32,11 +33,15 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         auth
                 .jdbcAuthentication()
                 .dataSource(dataSource)
-                .usersByUsernameQuery("SELECT email, password, enabled FROM customers WHERE email=?");
-
-
+                .usersByUsernameQuery("SELECT email, password, enabled FROM user WHERE email=?")
+                .authoritiesByUsernameQuery(
+                        "SELECT email, 'ROLE_USER' FROM user WHERE email=?");
     }
 
+    @Bean
+    public static NoOpPasswordEncoder passwordEncoder() {
+        return (NoOpPasswordEncoder) NoOpPasswordEncoder.getInstance();
+    }
 
 
 //    @Override
