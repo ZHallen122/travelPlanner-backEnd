@@ -19,13 +19,13 @@ public class HelloServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
         response.setContentType("application/json");
         ObjectMapper mapper = new ObjectMapper();
-        User customer= new User();
-        customer.setEmail("sun@laioffer.com");
-        customer.setPassword("123456");
-        customer.setFirstName("rick");
-        customer.setLastName("sun");
+        User user = new User();
+        user.setEmail("sun@laioffer.com");
+        user.setPassword("123456");
+        user.setFirstName("rick");
+        user.setLastName("sun");
 
-        response.getWriter().print(mapper.writeValueAsString(customer));
+        response.getWriter().print(mapper.writeValueAsString(user));
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
