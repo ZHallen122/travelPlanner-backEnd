@@ -16,7 +16,7 @@ public class PointOfInterest {
     private String longitude;
     private String latitude;
 
-    //To make more advance we need to store pictrue url
+    //To make more advance we need to store picture url
     private String picture_URL;
 
     //wait for add relation

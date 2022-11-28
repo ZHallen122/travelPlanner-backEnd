@@ -25,6 +25,8 @@
           <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.11.3" />
           <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.11.3" />
           <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-core:2.11.3" />
+          <element id="library" level="project" name="Maven: org.json:json:20200518" />
+          <element id="library" level="project" name="Maven: commons-io:commons-io:2.7" />
           <element id="library" level="project" name="Maven: org.springframework:spring-orm:5.3.9" />
           <element id="library" level="project" name="Maven: org.springframework:spring-jdbc:5.3.9" />
           <element id="library" level="project" name="Maven: org.springframework:spring-tx:5.3.9" />
@@ -48,7 +50,13 @@
           <element id="library" level="project" name="Maven: com.sun.xml.fastinfoset:FastInfoset:1.2.15" />
           <element id="library" level="project" name="Maven: mysql:mysql-connector-java:8.0.18" />
           <element id="library" level="project" name="Maven: com.google.protobuf:protobuf-java:3.6.1" />
-          <element id="library" level="project" name="Maven: io.jsonwebtoken:jjwt:0.7.0" />
+          <element id="library" level="project" name="Maven: io.jsonwebtoken:jjwt-api:0.11.5" />
+          <element id="library" level="project" name="Maven: io.jsonwebtoken:jjwt-impl:0.11.5" />
+          <element id="library" level="project" name="Maven: io.jsonwebtoken:jjwt-jackson:0.11.5" />
+          <element id="library" level="project" name="Maven: org.springframework.security:spring-security-web:5.5.2" />
+          <element id="library" level="project" name="Maven: org.springframework.security:spring-security-core:5.5.2" />
+          <element id="library" level="project" name="Maven: org.springframework.security:spring-security-crypto:5.5.2" />
+          <element id="library" level="project" name="Maven: org.springframework.security:spring-security-config:5.5.2" />
         </element>
       </element>
       <element id="directory" name="META-INF">
