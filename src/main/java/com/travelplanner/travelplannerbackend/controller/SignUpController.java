@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 @Controller
 public class SignUpController {
 
-    private UserService userService;
 
+    private UserService userService;
     @Autowired
     public SignUpController(UserService userService){
         this.userService=userService;

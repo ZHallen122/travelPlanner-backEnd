@@ -6,15 +6,15 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@Table(name="Plam")
+@Table(name="plan")
 public class Plan {
     @Id
     private int planId;
     private String plan_title;
     private int total_day;
 
-    @OneToMany
-    private List<SmallerPlan> listOfSmallerPlan;
+  //  @OneToMany(mappedBy ="plan",cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+  //  private List<SmallerPlan> listOfSmallerPlan;
 
     @ManyToOne
     @JsonIgnore
@@ -44,13 +44,13 @@ public class Plan {
         this.total_day = total_day;
     }
 
-    public List<SmallerPlan> getListOfSmallerPlan() {
-        return listOfSmallerPlan;
-    }
+   // public List<SmallerPlan> getListOfSmallerPlan() {
+   //     return listOfSmallerPlan;
+  //  }
 
-    public void setListOfSmallerPlan(List<SmallerPlan> listOfSmallerPlan) {
-        this.listOfSmallerPlan = listOfSmallerPlan;
-    }
+ //   public void setListOfSmallerPlan(List<SmallerPlan> listOfSmallerPlan) {
+ //       this.listOfSmallerPlan = listOfSmallerPlan;
+ //   }
 
     public Cart getCart() {
         return cart;
@@ -58,5 +58,5 @@ public class Plan {
 
     public void setCart(Cart cart) {
         this.cart = cart;
-    }
+   }
 }

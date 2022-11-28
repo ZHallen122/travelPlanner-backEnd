@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@Table(name="City")
+@Table(name="city")
 public class City {
     @Id
     private int id;
@@ -12,8 +12,8 @@ public class City {
     private String description;
     private String address;
 
-    //@OneToMany(mappedBy = "City", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-   // private List<PointOfInterest>pointOfInterest;
+    @OneToMany(mappedBy = "city", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private List<PointOfInterest>pointOfInterest;
     public int getId() {
         return id;
     }

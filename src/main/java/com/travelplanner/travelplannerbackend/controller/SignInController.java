@@ -11,16 +11,16 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
-@Controller
+//@Controller
 public class SignInController {
-    private final ObjectMapper objectMapper=new ObjectMapper();
-
-  //  @RequestMapping("/login")
-  //  public void login(@RequestParam(value = "error") String error, HttpServletResponse response) throws IOException {
-  //      response.setStatus(HttpStatus.UNAUTHORIZED.value());
-   //     Map<String, Object> data = new HashMap<>();
-   //     data.put("message", "bad credentials");
-  //      response.getOutputStream()
-   //             .println(objectMapper.writeValueAsString(data));
-   // }
+//    private final ObjectMapper objectMapper=new ObjectMapper();
+//
+//   @RequestMapping("/login")
+//    public void login(@RequestParam(value = "error") String error, HttpServletResponse response) throws IOException {
+//        response.setStatus(HttpStatus.UNAUTHORIZED.value());
+//        Map<String, Object> data = new HashMap<>();
+//        data.put("message", "bad credentials");
+//        response.getOutputStream()
+//                .println(objectMapper.writeValueAsString(data));
+//    }
 }

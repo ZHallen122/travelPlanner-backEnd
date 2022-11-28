@@ -6,7 +6,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="Point_Of_Interest")
+@Table(name="point_Of_Interest")
 public class PointOfInterest {
 
     @Id
@@ -20,8 +20,8 @@ public class PointOfInterest {
     private String picture_URL;
 
     //wait for add relation
-    @ManyToOne
-    private SmallerPlan smallerPlan;
+   // @ManyToOne
+  //  private SmallerPlan smallerPlan;
     @ManyToOne
     private City city;
 
@@ -41,13 +41,13 @@ public class PointOfInterest {
     public String getPicture_URL(){return this.picture_URL;}
     public void setPicture_URL(String picture_URL){this.picture_URL=picture_URL;}
 
-    public SmallerPlan getSmallerPlan() {
-        return smallerPlan;
-    }
+  //  public SmallerPlan getSmallerPlan() {
+   //     return smallerPlan;
+  //  }
 
-    public void setSmallerPlan(SmallerPlan smallerPlan) {
-        this.smallerPlan = smallerPlan;
-    }
+  //  public void setSmallerPlan(SmallerPlan smallerPlan) {
+  //      this.smallerPlan = smallerPlan;
+  //  }
 
     public City getCity() {
         return city;

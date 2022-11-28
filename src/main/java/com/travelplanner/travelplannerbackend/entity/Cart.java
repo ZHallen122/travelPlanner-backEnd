@@ -4,12 +4,13 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
+@Table(name="cart")
 public class Cart {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
-    @OneToMany(mappedBy ="Cart",cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @OneToMany(mappedBy ="cart",cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<Plan> planOfList;
 
     public int getId() {

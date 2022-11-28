@@ -4,14 +4,13 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
-@Table(name="User")
+@Table(name="user")
 public class User implements Serializable{
 
     //not sure
     private static final long serialVersionUID = 2652327633296064143L;
 
     @Id
-
     // things in table
     private String email;
     private String firstName;

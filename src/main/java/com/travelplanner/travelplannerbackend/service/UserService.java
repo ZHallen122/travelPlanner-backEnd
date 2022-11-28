@@ -14,9 +14,10 @@ public class UserService {
     public UserService(UserDao userDao){
         this.userDao=userDao;
     }
+
     public void signUp(User user){
-       // Cart cart=new Cart();
-       // user.setCart(cart);
+        Cart cart=new Cart();
+        user.setCart(cart);
 
         userDao.signUp(user);
     }

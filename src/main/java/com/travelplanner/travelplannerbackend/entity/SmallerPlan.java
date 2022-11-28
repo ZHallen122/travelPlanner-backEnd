@@ -6,7 +6,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="SmallerPlan")
+@Table(name="smallerPlan")
 public class SmallerPlan {
     @Id
     private int splanId;
@@ -15,8 +15,9 @@ public class SmallerPlan {
     //I think we can represent mode by int like 1=walking
     private int travelMode;
 
-    @ManyToOne
-    private Plan plan;
+   // @ManyToOne
+   // private Plan plan;
+
 
     public int getSplanId() {
         return splanId;
@@ -50,11 +51,11 @@ public class SmallerPlan {
         this.day = day;
     }
 
-    public Plan getPlan() {
-        return plan;
-    }
+ //   public Plan getPlan() {
+ //       return plan;
+ //   }
 
-    public void setPlan(Plan plan) {
-        this.plan = plan;
-    }
+  //  public void setPlan(Plan plan) {
+  //      this.plan = plan;
+  //  }
 }
