@@ -22,6 +22,19 @@ public class PointOfInterest {
     //wait for add relation
    // @ManyToOne
   //  private SmallerPlan smallerPlan;
+
+    //will be change in future
+    @ManyToOne
+    private Plan plan;
+
+    public Plan getPlan() {
+        return plan;
+    }
+
+    public void setPlan(Plan plan) {
+        this.plan = plan;
+    }
+
     @ManyToOne
     private City city;
 
