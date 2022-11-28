@@ -16,6 +16,7 @@ public class User implements Serializable{
     private String firstName;
     private String lastName;
     private String password;
+    private boolean enabled;
 
     // remember to add relation
     @OneToOne(cascade = CascadeType.ALL)
@@ -63,4 +64,11 @@ public class User implements Serializable{
         this.cart=cart;
     }
 
+    public boolean isEnabled() {
+        return enabled;
+    }
+
+    public void setEnabled(boolean enabled) {
+        this.enabled = enabled;
+    }
 }

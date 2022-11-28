@@ -16,9 +16,9 @@ public class UserService {
     }
 
     public void signUp(User user){
-        Cart cart=new Cart();
+        Cart cart = new Cart();
         user.setCart(cart);
-
+        user.setEnabled(true);
         userDao.signUp(user);
     }
 

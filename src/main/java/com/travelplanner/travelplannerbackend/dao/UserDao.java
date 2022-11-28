@@ -13,28 +13,32 @@ public class UserDao {
     @Autowired
     private SessionFactory sessionFactory;
     public void signUp(User user){
-        Session session=null;
+        Session session = null;
         try{
-            session=sessionFactory.openSession();
+            session = sessionFactory.openSession();
             session.beginTransaction();
             session.save(user);
             session.getTransaction().commit();
-        }catch (Exception ex){
+        } catch (Exception ex){
             ex.printStackTrace();
-            if(session!=null){
+            if(session != null){
                 session.getTransaction().rollback();
             }
-        }finally {
+        } finally {
             session.close();
         }
     }
 
     public User getUser(String email){
-        User user=new User();
-        try(Session session=sessionFactory.openSession()){
-            user=session.get(User.class,email);
-        }catch (Exception ex){
+        User user = null;
+        Session session = null;
+        try {
+            session = sessionFactory.openSession();
+            user = session.get(User.class, email);
+        } catch (Exception ex) {
             ex.printStackTrace();
+        } finally {
+            if(session != null) session.close();
         }
         return user;
     }
