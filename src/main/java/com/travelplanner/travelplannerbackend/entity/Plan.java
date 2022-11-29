@@ -13,8 +13,8 @@ public class Plan {
     private String plan_title;
     private int total_day;
 
-  //  @OneToMany(mappedBy ="plan",cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-  //  private List<SmallerPlan> listOfSmallerPlan;
+    @OneToMany(mappedBy ="plan",cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private List<SmallerPlan> listOfSmallerPlan;
 
     @ManyToOne
     @JsonIgnore
@@ -44,13 +44,13 @@ public class Plan {
         this.total_day = total_day;
     }
 
-   // public List<SmallerPlan> getListOfSmallerPlan() {
-   //     return listOfSmallerPlan;
-  //  }
+    public List<SmallerPlan> getListOfSmallerPlan() {
+        return listOfSmallerPlan;
+    }
 
- //   public void setListOfSmallerPlan(List<SmallerPlan> listOfSmallerPlan) {
- //       this.listOfSmallerPlan = listOfSmallerPlan;
- //   }
+    public void setListOfSmallerPlan(List<SmallerPlan> listOfSmallerPlan) {
+        this.listOfSmallerPlan = listOfSmallerPlan;
+    }
 
     public Cart getCart() {
         return cart;
