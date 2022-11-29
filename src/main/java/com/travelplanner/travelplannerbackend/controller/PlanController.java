@@ -3,10 +3,12 @@ package com.travelplanner.travelplannerbackend.controller;
 import com.travelplanner.travelplannerbackend.entity.Plan;
 import com.travelplanner.travelplannerbackend.service.PlanService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.ResponseStatus;
 
 @Controller
 public class PlanController {
@@ -22,7 +24,7 @@ public class PlanController {
     }
 
     @RequestMapping(value="/addplan", method = RequestMethod.POST)
-    @ResponseBody
+    @ResponseStatus(value = HttpStatus.CREATED)
     public void addPlan(String title_Name,int totalDate){
             planService.savePlan(title_Name,totalDate);
     }
