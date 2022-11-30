@@ -1,16 +1,16 @@
 package com.travelplanner.travelplannerbackend.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name="point_Of_Interest")
 public class PointOfInterest {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     // things inside table
+    private int id;
     private String point_name;
     private String description;
     private long longitude;
@@ -24,15 +24,23 @@ public class PointOfInterest {
   //  private SmallerPlan smallerPlan;
 
     //will be change in future
-    @ManyToOne
-    private Plan plan;
+    @ManyToMany
+    private List<SmallerPlan> smallerPlanIdList;
 
-    public Plan getPlan() {
-        return plan;
+    public int getId() {
+        return id;
     }
 
-    public void setPlan(Plan plan) {
-        this.plan = plan;
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public List<SmallerPlan> getSmallerPlanIdList() {
+        return smallerPlanIdList;
+    }
+
+    public void setSmallerPlanIdList(List<SmallerPlan> smallerPlanIdList) {
+        this.smallerPlanIdList = smallerPlanIdList;
     }
 
     @ManyToOne
@@ -45,11 +53,11 @@ public class PointOfInterest {
     public String getDescription(){return this.description;}
     public void setDescription(String description){this.description=description;}
 
-    public String getLongitude(){return this.longitude;}
-    public void setLongitude(String longitude){this.longitude=longitude;}
+    public long getLongitude(){return this.longitude;}
+    public void setLongitude(long longitude){this.longitude=longitude;}
 
-    public String getLatitude(){return this.latitude;}
-    public void setLatitude(String latitude){this.latitude=latitude;}
+    public long getLatitude(){return this.latitude;}
+    public void setLatitude(long latitude){this.latitude=latitude;}
 
     public String getPicture_URL(){return this.picture_URL;}
     public void setPicture_URL(String picture_URL){this.picture_URL=picture_URL;}
@@ -70,3 +78,4 @@ public class PointOfInterest {
         this.city = city;
     }
 }
+
