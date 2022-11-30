@@ -13,8 +13,8 @@ public class PointOfInterest {
     // things inside table
     private String point_name;
     private String description;
-    private String longitude;
-    private String latitude;
+    private long longitude;
+    private long latitude;
 
     //To make more advance we need to store picture url
     private String picture_URL;
