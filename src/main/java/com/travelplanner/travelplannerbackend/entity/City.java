@@ -1,11 +1,12 @@
 package com.travelplanner.travelplannerbackend.entity;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.List;
 
 @Entity
 @Table(name="city")
-public class City {
+public class City implements Serializable {
     @Id
     private int id;
     private String cityName;
@@ -44,5 +45,13 @@ public class City {
 
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    public List<PointOfInterest> getPointOfInterest() {
+        return pointOfInterest;
+    }
+
+    public void setPointOfInterest(List<PointOfInterest> pointOfInterest) {
+        this.pointOfInterest = pointOfInterest;
     }
 }

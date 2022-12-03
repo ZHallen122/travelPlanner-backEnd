@@ -5,10 +5,7 @@ import com.travelplanner.travelplannerbackend.service.PlanService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.ResponseStatus;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class PlanController {
@@ -17,15 +14,15 @@ public class PlanController {
     private PlanService planService;
 
     //Not sure
-    @RequestMapping(value="/plan", method = RequestMethod.GET)
+    @RequestMapping(value="/plan/{indexOfPlan}", method = RequestMethod.GET)
     @ResponseBody
-    public Plan getPlan (int indexOfPlan){
+    public Plan getPlan (@PathVariable("indexOfPlan") int indexOfPlan){
         return planService.getPlan(indexOfPlan);
     }
 
     @RequestMapping(value="/addplan", method = RequestMethod.POST)
     @ResponseStatus(value = HttpStatus.CREATED)
-    public void addPlan(String title_Name,int totalDate){
+    public void addPlan(@RequestParam("title_Name")String title_Name, @RequestParam("totalDate")int totalDate){
             planService.savePlan(title_Name,totalDate);
     }
 }

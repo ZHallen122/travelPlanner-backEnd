@@ -3,12 +3,14 @@ package com.travelplanner.travelplannerbackend.entity;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.List;
 
 @Entity
 @Table(name="plan")
-public class Plan {
+public class Plan implements Serializable {
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int planId;
     private String plan_title;
     private int total_day;
@@ -51,6 +53,7 @@ public class Plan {
     public void setListOfSmallerPlan(List<SmallerPlan> listOfSmallerPlan) {
         this.listOfSmallerPlan = listOfSmallerPlan;
     }
+
 
     public Cart getCart() {
         return cart;

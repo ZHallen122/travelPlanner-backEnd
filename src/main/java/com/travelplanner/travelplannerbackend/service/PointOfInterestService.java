@@ -5,9 +5,12 @@ import com.travelplanner.travelplannerbackend.entity.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+
+@Service
 public class PointOfInterestService {
     @Autowired
     private PointOfInterestDao pointOfInterestDao;
@@ -23,7 +26,9 @@ public class PointOfInterestService {
         Authentication loggInUser= SecurityContextHolder.getContext().getAuthentication();
         String userName=loggInUser.getName();
         User user=userService.getUser(userName);
-        pointOfInterestDao.savePointOfInterest(indexOfSmallerPlan, pointOfInterestId);
+       // pointOfInterestDao.savePointOfInterest(indexOfSmallerPlan, pointOfInterestId);
 
     }
+
+    public PointOfInterest getPointOfInterest(int id){return pointOfInterestDao.getPointOfInterest(id);}
 }

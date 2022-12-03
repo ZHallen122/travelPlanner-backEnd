@@ -37,7 +37,7 @@ public class SmallerPlanService {
         String userName=loggInUser.getName();
         User user=userService.getUser(userName);
 
-        return user.getCart().getPlanOfList().get(indexOfPlan).getListOfSmallerPlan().get(indexOfSmallerPlan);
+       return user.getCart().getPlanOfList().get(indexOfPlan).getListOfSmallerPlan().get(indexOfSmallerPlan);
     }
 
 }

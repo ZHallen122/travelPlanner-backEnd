@@ -10,10 +10,11 @@ import org.springframework.stereotype.Repository;
 
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 
-//@Repository
+@Repository
 public class PointOfInterestDao {
     @Autowired
     private SessionFactory sessionFactory;
@@ -30,17 +31,22 @@ public class PointOfInterestDao {
     }
     public void savePointOfInterest(int smallerPlanId, int pointOfInterestId) {
         try (Session session = sessionFactory.openSession()) {
-            Session session1 = null;
-            Session session2 = null;
-            SmallerPlan smallerPlan = session1.get(SmallerPlan.class, smallerPlanId);
-            PointOfInterest pointOfInterest = session2.get(PointOfInterest.class, pointOfInterestId);
-            smallerPlan.getPointOfInterestList().add(pointOfInterest);
-            session.save(pointOfInterest);
-            session.close();
+            
         } catch (Exception ex) {
             ex.printStackTrace();
         }
 
+    }
+
+    public PointOfInterest getPointOfInterest(int pointId){
+        try (Session session = sessionFactory.openSession()) {
+            PointOfInterest pointOfInterest=session.get(PointOfInterest.class, pointId);
+            session.close();
+            return pointOfInterest;
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+        return null;
     }
 
 

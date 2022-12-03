@@ -13,7 +13,7 @@ public class PointOfInterestController {
     @Autowired
     private PointOfInterestService pointOfInterestService;
 
-    @RequestMapping(value = "/pointOfInterest", method = RequestMethod.GET)
+    @RequestMapping(value = "/getAll_pointOfInterest", method = RequestMethod.GET)
     @ResponseBody
     public List<PointOfInterest> getAllPointOfInterest() {
         return pointOfInterestService.getAllPointOfInterest();

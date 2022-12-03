@@ -1,23 +1,25 @@
 package com.travelplanner.travelplannerbackend.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.io.Serializable;
+import java.util.List;
 
 @Entity
 @Table(name="smallerPlan")
-public class SmallerPlan {
+public class SmallerPlan implements Serializable {
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int splanId;
     private String smallerPlanName;
     private int day;
     //I think we can represent mode by int like 1=walking
     private int travelMode;
 
+    @OneToMany(mappedBy ="smallerPlan",cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private List<PointItem>pointItemList;
+
     @ManyToOne
     private Plan plan;
-
 
     public int getSplanId() {
         return splanId;
@@ -57,5 +59,13 @@ public class SmallerPlan {
 
     public void setPlan(Plan plan) {
         this.plan = plan;
+    }
+
+    public List<PointItem> getPointItemList() {
+        return pointItemList;
+    }
+
+    public void setPointItemList(List<PointItem> pointItemList) {
+        this.pointItemList = pointItemList;
     }
 }

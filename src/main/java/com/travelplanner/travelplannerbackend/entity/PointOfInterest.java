@@ -1,16 +1,15 @@
 package com.travelplanner.travelplannerbackend.entity;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.List;
 
 @Entity
 @Table(name="point_Of_Interest")
-public class PointOfInterest {
+public class PointOfInterest implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    // things inside table
-    private int id;
+    private int pointOfInterestId;
     private String point_name;
     private String description;
     private long longitude;
@@ -19,29 +18,14 @@ public class PointOfInterest {
     //To make more advance we need to store picture url
     private String picture_URL;
 
-    //wait for add relation
-   // @ManyToOne
-  //  private SmallerPlan smallerPlan;
-
-    //will be change in future
-    @ManyToMany
-    private List<SmallerPlan> smallerPlanIdList;
-
     public int getId() {
-        return id;
+        return pointOfInterestId;
     }
 
     public void setId(int id) {
-        this.id = id;
+        this.pointOfInterestId = id;
     }
 
-    public List<SmallerPlan> getSmallerPlanIdList() {
-        return smallerPlanIdList;
-    }
-
-    public void setSmallerPlanIdList(List<SmallerPlan> smallerPlanIdList) {
-        this.smallerPlanIdList = smallerPlanIdList;
-    }
 
     @ManyToOne
     private City city;
@@ -62,14 +46,6 @@ public class PointOfInterest {
     public String getPicture_URL(){return this.picture_URL;}
     public void setPicture_URL(String picture_URL){this.picture_URL=picture_URL;}
 
-  //  public SmallerPlan getSmallerPlan() {
-   //     return smallerPlan;
-  //  }
-
-  //  public void setSmallerPlan(SmallerPlan smallerPlan) {
-  //      this.smallerPlan = smallerPlan;
-  //  }
-
     public City getCity() {
         return city;
     }
@@ -78,4 +54,3 @@ public class PointOfInterest {
         this.city = city;
     }
 }
-

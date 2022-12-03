@@ -34,26 +34,26 @@ public class PlanDao {
         }
     }
 
-//    public void removeSmallerPlan(int sPlanId){
-//        Session session = null;
-//        try {
-//            session=sessionFactory.openSession();
-//            SmallerPlan splan = session.get(SmallerPlan.class,sPlanId);
-//            Plan plan = splan.getPlan();
-//            plan.getListOfSmallerPlan().remove(sPlanId);
-//
-//            session.beginTransaction();
-//            session.delete(splan);
-//            session.getTransaction().commit();
-//        } catch (Exception ex) {
-//            ex.printStackTrace();
-//            if (session != null) {
-//                session.getTransaction().rollback();
-//            }
-//        }finally {
-//            if(session!=null) {
-//                session.close();
-//            }
-//        }
-//    }
+    public void removeSmallerPlan(int sPlanId){
+        Session session = null;
+        try {
+            session=sessionFactory.openSession();
+            SmallerPlan splan = session.get(SmallerPlan.class,sPlanId);
+            Plan plan = splan.getPlan();
+            plan.getListOfSmallerPlan().remove(sPlanId);
+
+            session.beginTransaction();
+            session.delete(splan);
+            session.getTransaction().commit();
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            if (session != null) {
+                session.getTransaction().rollback();
+            }
+        }finally {
+            if(session!=null) {
+                session.close();
+            }
+        }
+    }
 }

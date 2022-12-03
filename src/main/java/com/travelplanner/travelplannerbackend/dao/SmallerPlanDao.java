@@ -32,5 +32,21 @@ public class SmallerPlanDao {
                 }
             }
         }
+
+        public SmallerPlan getSmallerPlan(int SmallerPlanId){
+                Session session=null;
+                try{
+                    session=sessionFactory.openSession();
+                    return session.get(SmallerPlan.class,SmallerPlanId);
+                } catch (Exception ex) {
+                    ex.printStackTrace();
+                    if (session != null) {
+                        session.getTransaction().rollback();
+                    }
+                }finally{
+                   session.close();
+            }
+                return null;
+        }
     }
 
