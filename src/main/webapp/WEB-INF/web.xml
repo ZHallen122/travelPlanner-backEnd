@@ -25,8 +25,8 @@
 
 
     <servlet-mapping>
-    <servlet-name>travelPlanner</servlet-name>
-    <url-pattern>/</url-pattern>
+        <servlet-name>travelPlanner</servlet-name>
+        <url-pattern>/</url-pattern>
     </servlet-mapping>
 
 

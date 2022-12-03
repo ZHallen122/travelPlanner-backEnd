@@ -11,10 +11,11 @@ public class City implements Serializable {
     private int id;
     private String cityName;
     private String description;
-    private String address;
+    private long longitude;
+    private long latitude;
 
     @OneToMany(mappedBy = "city", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    private List<PointOfInterest>pointOfInterest;
+    private List<PointOfInterest>pointOfInterestList;
     public int getId() {
         return id;
     }
@@ -39,19 +40,27 @@ public class City implements Serializable {
         this.description = description;
     }
 
-    public String getAddress() {
-        return address;
+    public long getLongitude() {
+        return longitude;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+    public void setLongitude(long longitude) {
+        this.longitude = longitude;
+    }
+
+    public long getLatitude() {
+        return latitude;
+    }
+
+    public void setLatitude(long latitude) {
+        this.latitude = latitude;
     }
 
     public List<PointOfInterest> getPointOfInterest() {
-        return pointOfInterest;
+        return pointOfInterestList;
     }
 
-    public void setPointOfInterest(List<PointOfInterest> pointOfInterest) {
-        this.pointOfInterest = pointOfInterest;
+    public void setPointOfInterest(List<PointOfInterest> pointOfInterestList) {
+        this.pointOfInterestList = pointOfInterestList;
     }
 }

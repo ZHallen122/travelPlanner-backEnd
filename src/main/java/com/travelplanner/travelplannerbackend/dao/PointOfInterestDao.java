@@ -1,5 +1,6 @@
 package com.travelplanner.travelplannerbackend.dao;
 
+import com.travelplanner.travelplannerbackend.entity.City;
 import com.travelplanner.travelplannerbackend.entity.Plan;
 import com.travelplanner.travelplannerbackend.entity.PointOfInterest;
 import com.travelplanner.travelplannerbackend.entity.SmallerPlan;
@@ -18,31 +19,33 @@ import java.util.List;
 public class PointOfInterestDao {
     @Autowired
     private SessionFactory sessionFactory;
-    public List<PointOfInterest> getAllPointOfInterest() {
+    public List<City> getCity() {
         try (Session session = sessionFactory.openSession()) {
             CriteriaBuilder builder = session.getCriteriaBuilder();
-            CriteriaQuery<PointOfInterest> criteria = builder.createQuery(PointOfInterest.class);
-            criteria.from(PointOfInterest.class);
+            CriteriaQuery<City> criteria = builder.createQuery(City.class);
+            criteria.from(City.class);
             return session.createQuery(criteria).getResultList();
         } catch (Exception ex) {
             ex.printStackTrace();
         }
         return new ArrayList<>();
     }
-    public void savePointOfInterest(int smallerPlanId, int pointOfInterestId) {
+
+    public List<PointOfInterest> getAllPointOfInterest(int cityId){
         try (Session session = sessionFactory.openSession()) {
-            
+            City city=session.get(City.class,cityId);
+            if(city!=null){
+                return city.getPointOfInterest();
+            }
         } catch (Exception ex) {
             ex.printStackTrace();
         }
-
+        return new ArrayList<>();
     }
 
-    public PointOfInterest getPointOfInterest(int pointId){
+    public PointOfInterest getPointOfInterest(int PointId){
         try (Session session = sessionFactory.openSession()) {
-            PointOfInterest pointOfInterest=session.get(PointOfInterest.class, pointId);
-            session.close();
-            return pointOfInterest;
+            return session.get(PointOfInterest.class,PointId);
         } catch (Exception ex) {
             ex.printStackTrace();
         }

@@ -14,7 +14,7 @@ public class SmallerPlanController {
 
     @RequestMapping(value="/dailyPlan",method = RequestMethod.GET)
     @ResponseBody
-    public SmallerPlan getSmallerPlan(int indexOfPlan, int indexOfSmallerPlan){
+    public SmallerPlan getSmallerPlan(@RequestParam("plan")int indexOfPlan, @RequestParam("dailyPlan")int indexOfSmallerPlan){
         return smallerPlanService.getSmallerPlan(indexOfPlan,indexOfSmallerPlan);
     }
 

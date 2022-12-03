@@ -18,16 +18,9 @@ public class PointOfInterestService {
     @Autowired
     UserService userService;
 
-    public List<PointOfInterest> getAllPointOfInterest() {
-        return pointOfInterestDao.getAllPointOfInterest();
-    }
-    public void savePointOfInterest(int planId, int indexOfSmallerPlan, int pointOfInterestId){
-
-        Authentication loggInUser= SecurityContextHolder.getContext().getAuthentication();
-        String userName=loggInUser.getName();
-        User user=userService.getUser(userName);
-       // pointOfInterestDao.savePointOfInterest(indexOfSmallerPlan, pointOfInterestId);
-
+    public List<City> getCity(){return pointOfInterestDao.getCity();}
+    public List<PointOfInterest> getAllPointOfInterest(int cityId) {
+        return pointOfInterestDao.getAllPointOfInterest(cityId);
     }
 
     public PointOfInterest getPointOfInterest(int id){return pointOfInterestDao.getPointOfInterest(id);}

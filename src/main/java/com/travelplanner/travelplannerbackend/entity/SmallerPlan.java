@@ -1,5 +1,7 @@
 package com.travelplanner.travelplannerbackend.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.List;
@@ -19,6 +21,7 @@ public class SmallerPlan implements Serializable {
     private List<PointItem>pointItemList;
 
     @ManyToOne
+    @JsonIgnore
     private Plan plan;
 
     public int getSplanId() {
