@@ -14,6 +14,16 @@ public class City implements Serializable {
     private double longitude;
     private double latitude;
 
+    private String pictureURL;
+
+    public String getPictureURL() {
+        return pictureURL;
+    }
+
+    public void setPictureURL(String pictureURL) {
+        this.pictureURL = pictureURL;
+    }
+
     @OneToMany(mappedBy = "city", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<PointOfInterest>pointOfInterestList;
     public int getId() {
