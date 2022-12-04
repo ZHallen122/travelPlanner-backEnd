@@ -26,10 +26,4 @@ public class PointOfInterestController {
     @ResponseBody
     public List<PointOfInterest> getPointOfInterest(@PathVariable(value = "cityId")int cityId) {
         return pointOfInterestService.getAllPointOfInterest(cityId);}
-
-//    @RequestMapping(value = "/{planId}/{smallerPlanId}/addPointOfInterest/{pointOfInterestID}", method = RequestMethod.POST)
-//    @ResponseStatus(value = HttpStatus.CREATED)
-//    public void savePointOfInterest(@PathVariable int planId,@PathVariable int smallerPlanId,@PathVariable int pointOfInterestID) {
-//        pointOfInterestService.savePointOfInterest( planId,smallerPlanId,pointOfInterestID);
-//    }
 }

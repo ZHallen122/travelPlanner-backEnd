@@ -14,8 +14,8 @@ public class PointOfInterest implements Serializable {
     private int pointOfInterestId;
     private String point_name;
     private String description;
-    private long longitude;
-    private long latitude;
+    private double longitude;
+    private double latitude;
 
     private String address;
 
@@ -42,10 +42,10 @@ public class PointOfInterest implements Serializable {
     public String getDescription(){return this.description;}
     public void setDescription(String description){this.description=description;}
 
-    public long getLongitude(){return this.longitude;}
+    public double getLongitude(){return this.longitude;}
     public void setLongitude(long longitude){this.longitude=longitude;}
 
-    public long getLatitude(){return this.latitude;}
+    public double getLatitude(){return this.latitude;}
     public void setLatitude(long latitude){this.latitude=latitude;}
 
     public String getPicture_URL(){return this.picture_URL;}
